@@ -1,132 +1,103 @@
-Skyport🚀
+# Skyport 🚀
 
-A modern cargo delivery platform that connects travelers (carriers) with users who need to send items. Swift-Link enables secure, real-time–tracked shipments using a user-friendly mobile application and a robust backend API.
+A modern cargo delivery platform that connects travelers (carriers) with users who need to send items. Skyport enables secure, real-time–tracked shipments using a user-friendly mobile application and a robust backend API.
 
-🎯 Project Overview
 
-Skyport is a full-stack cargo delivery system that facilitates secure, reliable, and fast item delivery through verified travelers.
-The platform supports multiple roles with advanced authentication, real-time tracking, payment processing, live customer support, and a smooth mobile experience.
+## 🎯 Project Overview
 
-✨ Key Features
-🔐 Authentication & Security
+Skyport is a full-stack cargo delivery system that facilitates secure, reliable, and fast item delivery through verified travelers. The platform supports multiple roles with advanced authentication, real-time tracking, payment processing, live customer support, and a smooth mobile experience.
 
-JWT-based authentication
+## ✨ Key Features
 
-OTP phone verification
+### 🔐 Authentication & Security
 
-National ID verification
+- JWT-based authentication
+- OTP phone verification
+- National ID verification
+- Role-based access control (Carrier, Sender, Receiver, Agent)
+- Admin/Agent approval for new users
 
-Role-based access control (Carrier, Sender, Receiver, Agent)
+### ✈️ Flight & Shipment Management
 
-Admin/Agent approval for new users
+- Carriers create and manage flights with available cargo space
+- Senders request shipments based on available flights
+- Unique tracking codes for real-time shipment tracking
+- Delivery confirmations using verification codes
+- Flight status updates (on-time, delayed, canceled)
 
-✈️ Flight & Shipment Management
+### 💳 Payment Integration
 
-Carriers create and manage flights with available cargo space
+- Integrated with Chapa payment gateway
+- Secure payment initialization and verification
+- Automated payment release after delivery confirmation
+- Platform fee and revenue management
 
-Senders request shipments based on available flights
+### 💬 Real-Time Customer Support
 
-Unique tracking codes for real-time shipment tracking
+- Live chat with Socket.io
+- Agent dashboard for support
+- Chat history and user management
+- Real-time message notifications
 
-Delivery confirmations using verification codes
+### 🎁 Rewards System
 
-Flight status updates (on-time, delayed, canceled)
+- Carriers earn points per successful delivery
+- Reward tracking and redemption system
 
-💳 Payment Integration
+### 📱 Mobile Application
 
-Integrated with Chapa payment gateway
+- Cross-platform (Android, iOS, Web) with React Native
+- Role-based dashboards
+- Modern and responsive UI
+- Landing page with an animated video background
 
-Secure payment initialization and verification
+## 🛠 Tech Stack
 
-Automated payment release after delivery confirmation
+### Backend
 
-Platform fee and revenue management
+- **Node.js** - 
+- **Express.js** (v5.1.0) - 
+- **MongoDB** - NoSQL database
+- **Prisma ORM** 
+- **JSON Web Tokens (JWT)** - Authentication
+- **Socket.io** (v4.8.1) - Real-time communication
+- **bcryptjs** - Password hashing
+- **Chapa Payment API** - Payment processing
+- **TextBee SMS API** - SMS notifications
+- **Nodemon** - Development tool
 
-💬 Real-Time Customer Support
+### Frontend
 
-Live chat with Socket.io
+- **React Native** (v0.81.4) - Mobile framework
+- **Expo** (v54.0.13) - Development platform
+- **React Navigation** (v7) - Navigation library
+- **Context API** - State management
+- **AsyncStorage** - Local storage
+- **Socket.io Client** - Real-time client
+- **Expo Vector Icons** - Icon library
+- **React Native Animatable** - Animations
+- **Expo Video** - Video playback
 
-Agent dashboard for support
+## 📦 Installation
 
-Chat history and user management
+### Prerequisites
 
-Real-time message notifications
+- Node.js (v18+)
+- npm or yarn
+- MongoDB (local or cloud)
+- Expo CLI
+- Git
 
-🎁 Rewards System
+### 📥 Clone the Repository
 
-Carriers earn points per successful delivery
+```bash
+git clone https://github.com/yathrib-04/Skyport.git
+cd Skyport
+```
 
-Reward tracking and redemption system
+### 📚 Install Dependencies
 
-📱 Mobile Application
-
-Cross-platform (Android, iOS, Web) with React Native
-
-Role-based dashboards
-
-Modern and responsive UI
-
-Landing page with an animated video background
-
-🛠 Tech Stack
-Backend
-
-Node.js
-
-Express.js (v5.1.0)
-
-MongoDB
-
-Prisma ORM (v6.17.1)
-
-JSON Web Tokens (JWT)
-
-Socket.io (v4.8.1)
-
-bcryptjs
-
-Chapa Payment API
-
-TextBee SMS API
-
-Nodemon (development)
-
-Frontend
-
-React Native (v0.81.4)
-
-Expo (v54.0.13)
-
-React Navigation (v7)
-
-Context API
-
-AsyncStorage
-
-Socket.io Client
-
-Expo Vector Icons, React Native Animatable
-
-Expo Video
-
-📦 Installation
-Prerequisites
-
-Node.js (v18+)
-
-npm or yarn
-
-MongoDB (local or cloud)
-
-Expo CLI
-
-Git
-
-📥 Clone the Repository
-git clone https://github.com/yathrib-04/Swift-Link.git
-cd Swift-Link
-
-📚 Install Dependencies
+```bash
 # Root dependencies
 npm install
 
@@ -137,8 +108,11 @@ npm install
 # Frontend
 cd ../frontend
 npm install
+```
 
-🧩 Prisma Setup
+### 🧩 Prisma Setup
+
+```bash
 cd backend
 
 # Generate client
@@ -149,9 +123,15 @@ npx prisma migrate dev
 
 # Seed database (optional)
 node seed.js
+```
 
-⚙️ Environment Setup
-Backend .env
+## ⚙️ Environment Setup
+
+### Backend `.env`
+
+Create a `.env` file in the `backend/` directory:
+
+```env
 DATABASE_URL="mongodb://localhost:27017/swiftlink"
 
 JWT_SECRET="your-secret-key-min-32-chars"
@@ -164,48 +144,58 @@ TEXTBEE_API_KEY="your-textbee-api-key"
 
 CHAPA_BASE_URL="https://api.chapa.co/v1/transaction/initialize"
 CHAPA_SECRET_KEY="your-chapa-secret-key"
+```
 
-Frontend
+### Frontend
 
-Update your API base URL:
+Update your API base URL in the frontend components:
 
-Local: http://localhost:5000
+- **Local**: `http://localhost:5000`
+- **Physical device**: `http://your-ip-address:5000`
 
-Physical device: http://your-ip-address:5000
+## 🚀 Running the Project
 
-🚀 Running the Project
-Option 1: Run Everything Together
+### Option 1: Run Everything Together
+
+```bash
 npm run dev
+```
 
-Option 2: Run Separately
-Backend
+This starts both backend and frontend concurrently.
+
+### Option 2: Run Separately
+
+#### Backend
+
+```bash
 cd backend
 npm run dev
+```
 
+Server runs on: `http://localhost:5000`
 
-Server runs on: http://localhost:5000
+#### Frontend
 
-Frontend
+```bash
 cd frontend
 npm start
+```
+
+Then select:
+- `a` → Android
+- `i` → iOS
+- `w` → Web
+- Or scan QR code using Expo Go app
 
 
-Select:
-
-a → Android
-
-i → iOS
-
-w → Web
-
-Or scan QR using Expo Go
-
-📝 License
+## 📝 License
 
 This project is licensed under the ISC License.
 
-👤 Author
+## 👤 Author
 
-Teyiba Aman — GitHub Profile
+**Teyiba Aman** - [GitHub Profile](https://github.com/yathrib-04)
+
+---
 
 Made with ❤️ to make cargo delivery simple, fast, and secure.
